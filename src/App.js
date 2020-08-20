@@ -25,11 +25,11 @@ export default function App() {
 		try {
 			const response = await api.post(`repositories/${id}/like`);
 
-			const repositories = repositories.map((repo) =>
+			const repository = repositories.map((repo) =>
 				repo.id === id ? response.data : repo
 			);
 
-			setRepositories(repositories);
+			setRepositories(repository);
 		} catch (error) {
 			console.log(error);
 		}
